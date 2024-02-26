@@ -1,0 +1,109 @@
+/* COLOR PALLET */
+@primary-color: #309375;    /* VIRIDIAN */
+@secondary-color: #8A3324;  /* BURNT UMBER */
+@background-color: #727E8D; /* SLATE GRAY */
+@text-color: #0E1C36;       /* OXFORD BLUE */
+@link-color: #B8B8B8;       /* SILVER */
+@success-color: #28a745;
+@error-color: #dc3545;
+@warn-color: #ffc107;
+
+.app {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  color: @text-color;
+}
+
+.app-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.app-feature {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.app-header {
+  background-color: @background-color;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  transition: width 0.3s ease;
+
+  &.narrow {
+    width: 30vw;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .app-feature {
+      order: 2;
+      position: fixed;
+      bottom: 0;
+    }
+
+    .app-home-link {
+      order: 0;
+    }
+
+    .app-link-options {
+      padding: 0;
+      text-align: center;
+      order: 1;
+    }
+  }
+
+  .artist-name {
+    width: 100%;
+    padding-top: 20px;
+    letter-spacing: 0.25em;
+    font-size: 1em;
+    color: @link-color;
+    text-shadow: 0 0 2px black;
+  }
+
+  .artist-name + hr {
+    width: 75%;
+    border: 1px solid @text-color;
+  }
+
+  .app-link-options {
+    list-style-type: none;
+    text-align: left;
+    z-index: 10;
+
+    li + li {
+      margin-top: 20px;
+    }
+  }
+
+  .app-link {
+    color: @link-color;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 1px black;
+
+    &:hover {
+      color: @secondary-color;
+    }
+  }
+}
+
+.app-content-pane {
+  padding-top: 45px;
+  width: 70vw;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

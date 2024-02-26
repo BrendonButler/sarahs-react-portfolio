@@ -1,0 +1,49 @@
+@text-color: #0E1C36;       /* OXFORD BLUE */
+@link-color: #B8B8B8;       /* SILVER */
+@success-color: #28a745;
+@error-color: #dc3545;
+@warn-color: #ffc107;
+
+.social-links {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-end;
+    justify-content: center;
+
+    &.narrow {
+        flex-direction: column-reverse;
+    }
+
+    .social-logo {
+        width: 25px;
+        height: 25px;
+        filter: grayscale(100%) opacity(60%);
+        transition: filter 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            filter: grayscale(0%);
+        }
+    }
+}
+
+.error-page {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        font-size: 3em;
+        color: @error-color;
+    }
+
+    p {
+        font-style: italic;
+        color: @text-color;
+    }
+}
