@@ -26,6 +26,7 @@
 }
 
 .app-header {
+  position: absolute;
   background-color: @background-color;
   width: 100vw;
   min-height: 100vh;
@@ -35,6 +36,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   transition: width 0.3s ease;
+  z-index: 10;
 
   &.narrow {
     width: 30vw;
@@ -95,8 +97,56 @@
 }
 
 .app-content-pane {
-  padding-top: 45px;
   width: 70vw;
+  margin-left: 30vw;
+  padding: 0 45px;
+  transition: visibility 0.3s ease;
+
+  &.hidden {
+    visibility: hidden;
+  }
+}
+
+form {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  div {
+    width: 80%;
+  }
+
+  button {
+    width: fit-content;
+    padding: 5px 10px;
+  }
+}
+
+label {
+  padding-left: 10px;
+  display: block;
+  text-align: left;
+}
+
+input, textarea {
+  width: 100%;
+  appearance: none;
+  border: 1px solid @text-color;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+
+  &[name="message"] {
+    height: 4em;
+    max-height: 20em;
+    min-height: 4em;
+    min-width: 100%;
+    max-width: 100%;
+  }
 }
 
 body {

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes as Switch, Route } from "react-router-dom";
 import './styles/pages.less';
@@ -11,44 +11,44 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import { useIsHomePage } from './hooks/SharedHooks';
 
-const Header: React.FC = () => {
-  const isHomePage = useIsHomePage();
-
+const Header = function (props: { isNarrow: boolean }) {
   return (
-      <header className={"app-header " + (isHomePage ? "" : "narrow")}>
+      <header className={"app-header " + (props.isNarrow ? "narrow" : "")}>
         <Navigation />
       </header>
   );
 }
 
-const Content = function () {
-  const isHomePage = useIsHomePage();
-
+const Content = function (props: { show: boolean }) {
   return (
-      <Fragment>{!isHomePage && (
-          <main className="app-content-pane">
-            <Switch>
-              {/* Page routes */}
-              <Route index path="/" element={null} />
-              <Route path="works" element={<Portfolio />} />
-              <Route path="contact" element={<Contact />} />
-              <Route path="about" element={<About />} />
-              {/* Error pages */}
-              <Route path="/500" element={<ServerError />} />
-              <Route path='*' element={<NotFound />} />
-            </Switch>
-          </main>
-      )}
-      </Fragment>
+      <main className={"app-content-pane " + (props.show ? "" : "hidden")}>
+        <Switch>
+          {/* Page routes */}
+          <Route index path="/" element={null} />
+          <Route path="works" element={<Portfolio />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="about" element={<About />} />
+          {/* Error pages */}
+          <Route path="/500" element={<ServerError />} />
+          <Route path='*' element={<NotFound />} />
+        </Switch>
+      </main>
   )
 }
 
 function App() {
+  const isHomePage = useIsHomePage();
+  const [isNarrow, setIsNarrow] = React.useState(!isHomePage);
+
+  React.useEffect(() => {
+    setIsNarrow(!isHomePage);
+  }, [isHomePage]);
+
   return (
       <div className="app">
         <Social />
-        <Header />
-        <Content />
+        <Header isNarrow={isNarrow}/>
+        <Content show={isNarrow} />
       </div>
   );
 }
