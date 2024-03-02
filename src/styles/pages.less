@@ -27,7 +27,7 @@
 }
 
 .app-header {
-  position: absolute;
+  position: fixed;
   background-color: @background-color;
   width: 100vw;
   min-height: 100vh;
@@ -105,6 +105,28 @@
 
 .hidden {
   display: none;
+}
+
+.art-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .item {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 10px;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      max-width: 100%;
+      text-transform: capitalize;
+    }
+  }
 }
 
 form {

@@ -14,7 +14,7 @@ import { useIsHomePage } from './hooks/SharedHooks';
 const Header = function (props: { isNarrow: boolean }) {
   return (
       <header className={'app-header ' + (props.isNarrow ? 'narrow' : '')}>
-        <Navigation isNarrow={props.isNarrow} />
+        <Navigation />
       </header>
   );
 }

@@ -3,7 +3,7 @@ import logo from '../assets/slj.svg';
 import feature from '../assets/marbles-toto-butterfly.png';
 import { Link, useLocation } from 'react-router-dom';
 
-function Navigation(props: { isNarrow: boolean }) {
+function Navigation() {
   const location = useLocation();
   const activePath = location.pathname;
   const links = [

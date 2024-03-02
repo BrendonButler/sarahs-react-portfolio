@@ -1,0 +1,19 @@
+[
+  { "id": 1, "filePath": "bunyan.jpeg", "caption": "bunyan", "medium": "acrylic on canvas", "subject": "statue", "tags": ["Movie Scene","Pennywise","Stephen King","IT","Realism"] },
+  { "id": 2, "filePath": "daisy.png", "caption": "daisy", "medium": "acrylic on canvas", "subject": "dog", "tags": ["Portrait","Realism"] },
+  { "id": 3, "filePath": "eye-see-u.jpeg", "caption": "sarah's eye", "medium": "mixed media on bristol", "subject": "eye", "tags": ["Realism"] },
+  { "id": 4, "filePath": "hannibal.png", "caption": "hannibal", "medium": "acrylic on canvas", "subject": "dog", "tags": ["Portrait","Realism"] },
+  { "id": 5, "filePath": "hermione.png", "caption": "hermione", "medium": "acrylic on canvas", "subject": "cat", "tags": ["Portrait","Realism"] },
+  { "id": 6, "filePath": "holy-cannoli.jpeg", "caption": "holy cannolis", "medium": "gouasche on bristol", "subject": "cannolis", "tags": ["Food","Realism"] },
+  { "id": 7, "filePath": "luna.png", "caption": "luna", "medium": "acrylic on canvas", "subject": "cat", "tags": ["Portrait","Realism"] },
+  { "id": 8, "filePath": "marbles.png", "caption": "marbles", "medium": "acrylic on canvas", "subject": "dog", "tags": ["Portrait","Realism"] },
+  { "id": 9, "filePath": "marbles-on-bed.jpeg", "caption": "marbles on bed", "medium": "acrylic on canvas", "subject": "dog", "tags": ["Portrait","Realism"] },
+  { "id": 10, "filePath": "marbles-off-bed.jpeg", "caption": "marbles off bed", "medium": "acrylic on canvas", "subject": "dog", "tags": ["Portrait","Realism"] },
+  { "id": 11, "filePath": "norman.png", "caption": "marbles off bed", "medium": "acrylic on canvas", "subject": "dog", "tags": ["Portrait","Realism"] },
+  { "id": 12, "filePath": "pennywise-1.png", "caption": "pennywise 1", "medium": "acrylic on canvas", "subject": "pennywise", "tags": ["Portrait","Realism"] },
+  { "id": 13, "filePath": "pennywise-2.png", "caption": "pennywise 2", "medium": "watercolor pencil on bristol", "subject": "pennywise", "tags": ["Portrait","Realism"] },
+  { "id": 14, "filePath": "pennywise-3.png", "caption": "pennywise 2", "medium": "acrylic on canvas", "subject": "pennywise", "tags": ["Portrait","Realism"] },
+  { "id": 15, "filePath": "ripley.png", "caption": "ripley", "medium": "acrylic on canvas", "subject": "dog", "tags": ["Portrait","Realism"] },
+  { "id": 16, "filePath": "socks.png", "caption": "socks", "medium": "acrylic on canvas", "subject": "cat", "tags": ["Portrait","Realism"] },
+  { "id": 17, "filePath": "still-life-1.jpeg", "caption": "still life 1", "medium": "acrylic on canvas", "subject": "objects", "tags": ["Realism"] }
+]
