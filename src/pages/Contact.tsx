@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const initialFormData = {
-  email: "",
-  message: ""
+  email: '',
+  message: ''
 }
 
 function Contact() {
@@ -17,7 +17,7 @@ function Contact() {
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    alert("Thank you for your submission");
+    alert('Thank you for your submission');
     setFormData(initialFormData);
   };
 
@@ -25,29 +25,29 @@ function Contact() {
       <form onSubmit={handleSubmit}>
         <h2>Contact me!</h2>
         <div>
-          <label htmlFor="email">Email</label>
+          <label htmlFor='email'>Email</label>
           <input
               required
-              name="email"
-              id="email"
-              type="email"
-              placeholder="Enter your email"
+              name='email'
+              id='email'
+              type='email'
+              placeholder='Enter your email'
               value={formData.email}
               onChange={handleChange}
           />
         </div>
         <div>
-          <label htmlFor="message">Message</label>
+          <label htmlFor='message'>Message</label>
           <textarea
               required
-              name="message"
-              id="message"
-              placeholder="I would love a sick photo of my cat (Matt Watson) wearing a suit with a monocle -- he is one of the funny brothers after all!"
+              name='message'
+              id='message'
+              placeholder='I would love a sick photo of my cat (Matt Watson) wearing a suit with a monocle -- he is one of the funny brothers after all!'
               value={formData.message}
               onChange={handleChange}
           />
         </div>
-        <button type="submit">
+        <button type='submit'>
           Submit
         </button>
       </form>

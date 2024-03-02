@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes as Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes as Switch, Route } from 'react-router-dom';
 import './styles/pages.less';
 import reportWebVitals from './reportWebVitals';
 import Social from './components/Social';
@@ -13,23 +13,23 @@ import { useIsHomePage } from './hooks/SharedHooks';
 
 const Header = function (props: { isNarrow: boolean }) {
   return (
-      <header className={"app-header " + (props.isNarrow ? "narrow" : "")}>
-        <Navigation />
+      <header className={'app-header ' + (props.isNarrow ? 'narrow' : '')}>
+        <Navigation isNarrow={props.isNarrow} />
       </header>
   );
 }
 
 const Content = function (props: { show: boolean }) {
   return (
-      <main className={"app-content-pane " + (props.show ? "" : "hidden")}>
+      <main className={'app-content-pane ' + (props.show ? '' : 'hidden')}>
         <Switch>
           {/* Page routes */}
-          <Route index path="/" element={null} />
-          <Route path="works" element={<Portfolio />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="about" element={<About />} />
+          <Route index path='/' element={null} />
+          <Route path='works' element={<Portfolio />} />
+          <Route path='contact' element={<Contact />} />
+          <Route path='about' element={<About />} />
           {/* Error pages */}
-          <Route path="/500" element={<ServerError />} />
+          <Route path='/500' element={<ServerError />} />
           <Route path='*' element={<NotFound />} />
         </Switch>
       </main>
@@ -45,9 +45,9 @@ function App() {
   }, [isHomePage]);
 
   return (
-      <div className="app">
-        <Social />
-        <Header isNarrow={isNarrow}/>
+      <div className='app'>
+        <Social isNarrow={isNarrow} />
+        <Header isNarrow={isNarrow} />
         <Content show={isNarrow} />
       </div>
   );

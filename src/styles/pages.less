@@ -23,6 +23,7 @@
 .app-feature {
   height: 40vmin;
   pointer-events: none;
+  transition: display 3s ease;
 }
 
 .app-header {
@@ -100,11 +101,10 @@
   width: 70vw;
   margin-left: 30vw;
   padding: 0 45px;
-  transition: visibility 0.3s ease;
+}
 
-  &.hidden {
-    visibility: hidden;
-  }
+.hidden {
+  display: none;
 }
 
 form {
