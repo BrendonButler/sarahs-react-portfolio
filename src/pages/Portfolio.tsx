@@ -7,7 +7,7 @@ interface Photo {
   caption: string;
   medium: string;
   subject: string;
-  tags: Array<String>;
+  tags: string[];
 }
 
 export function PhotoGrid() {
@@ -21,7 +21,11 @@ export function PhotoGrid() {
       <div className='art-grid'>
         {photos.map(photo => (
             <div key={photo.id} className='item' title={photo.medium}>
-              <img src={'assets/art/' + photo.filePath} alt={photo.caption} loading='lazy' />
+              <div className='blur-load'
+                   style={{ backgroundImage: `url(assets/art/smalls/${photo.filePath.substring(0, photo.filePath.indexOf('.'))}-small.jpg)` }}
+              >
+                <img src={'assets/art/' + photo.filePath} alt={photo.caption} loading='lazy' />
+              </div>
               <span className='caption'>{photo.caption}</span>
             </div>
         ))}
