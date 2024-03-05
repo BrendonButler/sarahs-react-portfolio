@@ -38,7 +38,7 @@ const Content = function (props: { show: boolean }) {
 
 function App() {
   const isHomePage = useIsHomePage();
-  const [isNarrow, setIsNarrow] = React.useState(!isHomePage);
+  const [isNarrow, setIsNarrow] = React.useState<boolean>(!isHomePage);
 
   React.useEffect(() => {
     setIsNarrow(!isHomePage);

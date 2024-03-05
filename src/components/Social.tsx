@@ -3,8 +3,8 @@ import linkedin from '../assets/linkedin.svg';
 import instagram from '../assets/instagram.svg';
 
 function Social(props: { isNarrow: boolean }) {
-  const instagramURL = 'https://www.instagram.com/';
-  const linkedInURL = 'https://www.linkedin.com/';
+  const instagramURL: string = 'https://www.instagram.com/';
+  const linkedInURL: string = 'https://www.linkedin.com/';
 
   return (
       <div className={'social-links ' + (props.isNarrow ? 'narrow' : '')}>

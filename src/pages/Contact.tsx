@@ -1,21 +1,26 @@
 import React from 'react';
 
-const initialFormData = {
-  email: '',
-  message: ''
+type FormData = {
+  email: string,
+  message: string
 }
 
-function Contact() {
-  const [formData, setFormData] = React.useState(initialFormData);
+const initialFormData: FormData = {
+  email: '',
+  message: ''
+};
 
-  const handleChange = (e: { target: { name: string; value: string; }; }) => {
+function Contact() {
+  const [formData, setFormData] = React.useState<FormData>(initialFormData);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(formData => ({
       ...formData,
       [e.target.name]: e.target.value
     }));
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Thank you for your submission');
     setFormData(initialFormData);

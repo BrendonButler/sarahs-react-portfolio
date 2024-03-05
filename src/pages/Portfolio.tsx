@@ -19,7 +19,7 @@ export function PhotoGrid() {
 
   return (
       <div className='art-grid'>
-        {photos.map(photo => (
+        {photos.map((photo: Photo) => (
             <div key={photo.id} className='item' title={photo.medium}>
               <div className='blur-load'
                    style={{ backgroundImage: `url(assets/art/smalls/${photo.filePath.substring(0, photo.filePath.indexOf('.'))}-small.jpg)` }}
