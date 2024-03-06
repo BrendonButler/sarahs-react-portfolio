@@ -10,21 +10,28 @@ interface Photo {
   tags: string[];
 }
 
-export function PhotoGrid() {
-  const [photos, setPhotos] = React.useState<Photo[]>([]);
+const artBaseUrl: string = 'assets/art/';
+const artSmallsBaseUrl: string = 'assets/art/smalls/';
 
-  React.useEffect(() => {
-    setPhotos(portfolioJson);
-  }, []);
+export function PhotoGrid({ photos }: { photos: Photo[] }) {
+  const [enlargedPhoto, setEnlargedPhoto] = React.useState<Photo | null>(null);
+
+  const toggleEnlargedPhoto = (photo: Photo) => {
+    setEnlargedPhoto(enlargedPhoto ? null : photo);
+  }
 
   return (
       <div className='art-grid'>
         {photos.map((photo: Photo) => (
-            <div key={photo.id} className='item' title={photo.medium}>
-              <div className='blur-load'
-                   style={{ backgroundImage: `url(assets/art/smalls/${photo.filePath.substring(0, photo.filePath.indexOf('.'))}-small.jpg)` }}
+            <div key={photo.id} className='item' title={photo.medium}
+                 onClick={() => toggleEnlargedPhoto(photo)}
+            >
+              <div className={'blur-load ' + (enlargedPhoto === photo ? 'enlarged' : '')}
+                   style={{
+                     backgroundImage: `url(${artSmallsBaseUrl + photo.filePath.substring(0, photo.filePath.indexOf('.'))}-small.jpg)`
+                   }}
               >
-                <img src={'assets/art/' + photo.filePath} alt={photo.caption} loading='lazy' />
+                <img src={artBaseUrl + photo.filePath} alt={photo.caption} loading='lazy' />
               </div>
               <span className='caption'>{photo.caption}</span>
             </div>
@@ -34,12 +41,22 @@ export function PhotoGrid() {
 }
 
 function Portfolio() {
-    return (
-        <Fragment>
-          <h2>Portfolio</h2>
-          <PhotoGrid />
-        </Fragment>
-    );
+  const [photos, setPhotos] = React.useState<Photo[]>([]);
+
+  React.useEffect(() => {
+    try {
+      setPhotos(portfolioJson);
+    } catch (error) {
+      console.error('Error fetching portfolio data: ', error);
+    }
+  }, []);
+
+  return (
+      <Fragment>
+        <h2>Portfolio</h2>
+        <PhotoGrid photos={photos} />
+      </Fragment>
+  );
 }
 
 export default Portfolio;
